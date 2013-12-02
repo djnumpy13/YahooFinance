@@ -20,13 +20,17 @@ parser.add_option('--stop', help='end of time range', dest='stop', default=datet
 parser.add_option('--outputcsv', help='optional file for writing data', dest='outputcsv', default=None, metavar='filename')
 (params, args) = parser.parse_args()
 
-assetone = params.assetone
-assettwo = params.assettwo
-rollingwindow = int(params.rollingwindow)
-clippedpct = float(params.clippedpct)
-start = datetime.strptime(params.start, '%Y%m%d')
-stop = datetime.strptime(params.stop, '%Y%m%d')
-outputcsv = params.outputcsv
+try:
+    assetone = params.assetone
+    assettwo = params.assettwo
+    rollingwindow = int(params.rollingwindow)
+    clippedpct = float(params.clippedpct)
+    start = datetime.strptime(params.start, '%Y%m%d')
+    stop = datetime.strptime(params.stop, '%Y%m%d')
+    outputcsv = params.outputcsv
+except Exception as e:
+    logger.error('Message="Error parsing command line input overrides"; ErrorType="%s"' % str(type(e)))
+    sys.exit(1)
 
 logger.info('Message="Logging of startup parameters"; AssetOne="%s"; AssetTwo="%s"; RollingWindow="%s"; ClippedPct="%s"; StartTime="%s"; StopTime="%s";' % (assetone, assettwo, rollingwindow, clippedpct, start, stop))
 
