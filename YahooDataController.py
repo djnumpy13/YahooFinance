@@ -1,8 +1,6 @@
-import csv
 import logging
 import pandas
 import sys
-import traceback
 import urllib
 from datetime import datetime
 

@@ -1,0 +1,17 @@
+2013-12-01 18:23:59,074; Level=INFO; Function=ConsoleLogger::createLogger:13; Message="Logger has been initialized successfully"
+2013-12-01 18:23:59,075; Level=INFO; Function=RollingBeta::<module>:35; Message="Logging of startup parameters"; AssetOne="SPY"; AssetTwo="GE"; RollingWindow="30"; ClippedPct="0.05"; StartTime="1970-01-01 00:00:00"; StopTime="2013-12-01 00:00:00";
+2013-12-01 18:23:59,075; Level=INFO; Function=RollingBeta::<module>:37; Message="starting retrieval of asset data"
+2013-12-01 18:23:59,076; Level=INFO; Function=YahooDataController::retrieveData:11; Message="Retrieving data from yahoo"; Asset="SPY"; FromDate="19700101"; ToDate="20131201";
+2013-12-01 18:23:59,632; Level=INFO; Function=YahooDataController::retrieveData:37; Message="Successfully retrieved data from Yahoo"; Asset="SPY"; DataPoints="5249";
+2013-12-01 18:23:59,632; Level=INFO; Function=YahooDataController::retrieveData:11; Message="Retrieving data from yahoo"; Asset="GE"; FromDate="19700101"; ToDate="20131201";
+2013-12-01 18:24:00,434; Level=INFO; Function=YahooDataController::retrieveData:37; Message="Successfully retrieved data from Yahoo"; Asset="GE"; DataPoints="11061";
+2013-12-01 18:24:00,434; Level=INFO; Function=RollingBeta::<module>:44; Message="data retrieval complete."; CalcTime="0:00:01.358197";
+2013-12-01 18:24:00,434; Level=INFO; Function=RollingBeta::<module>:50; Message="starting normalization of asset data"
+2013-12-01 18:24:00,434; Level=INFO; Function=RollingBeta::<module>:53; Message="Combining data frames and handling missing days"
+2013-12-01 18:24:00,439; Level=INFO; Function=RollingBeta::<module>:56; Message="length of data frame after dropping incomplete days is 5249"
+2013-12-01 18:24:00,439; Level=INFO; Function=RollingBeta::<module>:59; Message="data normalization complete."; CalcTime="0:00:00.005510";
+2013-12-01 18:24:00,439; Level=INFO; Function=RollingBeta::<module>:61; Message="starting rolling beta calculation."
+2013-12-01 18:24:00,442; Level=INFO; Function=RollingBeta::<module>:71; Message="rolling beta calculation complete."; CalcTime="0:00:00.002877"; Window="30";
+2013-12-01 18:24:00,442; Level=INFO; Function=RollingBeta::<module>:73; Message="starting rolling beta calculation with clipping"; ClipPct="0.05"
+2013-12-01 18:24:00,448; Level=INFO; Function=RollingBeta::<module>:83; Message="rolling beta calculation with clipping complete."; CalcTime="0:00:00.005477"; Window="30"; ClippedPct="0.05";
+2013-12-01 18:24:00,448; Level=INFO; Function=RollingBeta::<module>:89; Message="plotting all of the results using matplotlib..."
